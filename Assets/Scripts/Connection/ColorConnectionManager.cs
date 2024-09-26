@@ -37,6 +37,8 @@ namespace Connection
                 _completionsByTargetNode[nodeTarget] = nodeTarget.IsCompleted;
             }
 
+            CalculateBounds();
+
             _clickHandler = ClickHandler.Instance;
             _clickHandler.SetDragEventHandlers(OnDragStart, OnDragEnd);
         }
@@ -44,6 +46,12 @@ namespace Connection
         private void OnDestroy()
         {
             _clickHandler.ClearEvents();
+        }
+
+        [ContextMenu("Calculate Bounds for camera")]
+        public void CalculateBounds()
+        {
+            CameraSwipeMovement.Instance.SetupPositions(_nodes.Select(node => node.transform).ToArray());
         }
 
         private void StartConnecting(ColorNode colorNode)

@@ -11,6 +11,11 @@ namespace Events
                 
             }
 
+            public struct Scrolled : IEvent
+            {
+
+            }
+
             public struct PlayerFingerRemoved : IEvent
             {
                 

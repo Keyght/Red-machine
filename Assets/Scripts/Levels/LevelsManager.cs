@@ -8,7 +8,7 @@ namespace Levels
     {
         private const string LevelNamePattern = "Level{0}";
 
-        private int _currentLevelIndex;
+        private int _currentLevelIndex=-1;
 
 
         private void Start()
