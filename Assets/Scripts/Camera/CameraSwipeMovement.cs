@@ -25,6 +25,9 @@ public class CameraSwipeMovement : DontDestroyMonoBehaviourSingleton<CameraSwipe
 
     public void SetupPositions(Transform[] nodeTransforms)
     {
+        _minPosition = Vector2.zero;
+        _maxPosition = Vector2.zero;
+
         foreach (Transform node in nodeTransforms) 
         {
             if (node.position.x < _minPosition.x)
